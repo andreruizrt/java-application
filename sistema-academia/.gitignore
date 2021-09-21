@@ -1,0 +1,8 @@
+# Maven
+target/
+
+# Visual Code
+.vscode/
+
+# Test
+test/
