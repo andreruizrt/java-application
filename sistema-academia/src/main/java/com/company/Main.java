@@ -4,15 +4,25 @@ import com.company.domain.Aluno;
 import com.company.domain.Exercicio;
 import com.company.domain.Professor;
 import com.company.service.AlunoService;
+import com.company.service.DatabaseService;
 import com.company.service.ExercicioService;
 import com.company.service.ProfessorService;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        
+        // Database setup
+        DatabaseService databaseService = new DatabaseService();
+        
+        List<Aluno> alunos = databaseService.carregaAlunos();
+        List<Professor> professores = databaseService.carregaProfessores();
+        List<Exercicio> exercicios = databaseService.carregaExercicios();
+        
         Scanner sc = new Scanner(System.in);
 
         int opcao = 0;
