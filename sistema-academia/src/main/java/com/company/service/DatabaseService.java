@@ -45,6 +45,7 @@ public class DatabaseService {
         pstmt.setString(2, cpf);
         pstmt.executeUpdate();
         System.out.println("[*] Success to save the student.");
+        this.disconnect(conn);
     } catch (SQLException e) {
         System.out.println(e.getMessage());
     }
@@ -59,7 +60,8 @@ public class DatabaseService {
         pstmt.executeUpdate();
 
         System.out.println("[*] Success to save the teacher.");
-
+        
+        this.disconnect(conn);
     } catch (SQLException e) {
         System.out.println(e.getMessage());
     }
@@ -75,9 +77,12 @@ public class DatabaseService {
         pstmt.executeUpdate();
 
         System.out.println("[*] Success to save the exercise.");
+
+        this.disconnect(conn);
         
     } catch (SQLException e) {
         System.out.println(e.getMessage());
     }
   }
+  
 }
